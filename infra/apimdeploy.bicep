@@ -19,7 +19,7 @@ resource apimService 'Microsoft.ApiManagement/service@2023-03-01-preview' = {
   location: resourceGroup().location
   sku: {
     name: 'Consumption'
-    capacity: 1
+    capacity: 0
   }
   properties: {
     publisherEmail: 'petender@mttdemoworld.onmicrosoft.com'
