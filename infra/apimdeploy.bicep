@@ -18,7 +18,7 @@ resource apimService 'Microsoft.ApiManagement/service@2023-03-01-preview' = {
   name: name
   location: resourceGroup().location
   sku: {
-    name: 'Standard'
+    name: 'Consumption'
     capacity: 1
   }
   properties: {
