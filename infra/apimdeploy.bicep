@@ -360,21 +360,12 @@ resource apimServiceName_demo_conference_api_default 'Microsoft.ApiManagement/se
 
 }
 
-resource Microsoft_ApiManagement_service_apis_wikis_apimServiceName_demo_conference_api_default 'Microsoft.ApiManagement/service/apis/wikis@2023-03-01-preview' = {
-  parent: apimServiceName_demo_conference_api
-  name: 'default'
-  properties: {
-    documents: []
-  }
-
-}
-
 
 resource apimServiceName_demo_conference_api_GetSpeakers_policy 'Microsoft.ApiManagement/service/apis/operations/policies@2023-03-01-preview' = {
   parent: apimServiceName_demo_conference_api_GetSpeakers
   name: 'policy'
   properties: {
-    value: '<!--\r\n    IMPORTANT:\r\n    - Policy elements can appear only within the <inbound>, <outbound>, <backend> section elements.\r\n    - To apply a policy to the incoming request (before it is forwarded to the backend service), place a corresponding policy element within the <inbound> section element.\r\n    - To apply a policy to the outgoing response (before it is sent back to the caller), place a corresponding policy element within the <outbound> section element.\r\n    - To add a policy, place the cursor at the desired insertion point and select a policy from the sidebar.\r\n    - To remove a policy, delete the corresponding policy statement from the policy document.\r\n    - Position the <base> element within a section element to inherit all policies from the corresponding section element in the enclosing scope.\r\n    - Remove the <base> element to prevent inheriting policies from the corresponding section element in the enclosing scope.\r\n    - Policies are applied in the order of their appearance, from the top down.\r\n    - Comments within policy elements are not supported and may disappear. Place your comments between policy elements or at a higher level scope.\r\n-->\r\n<policies>\r\n  <inbound>\r\n    <base />\r\n    <rate-limit calls="5" renewal-period="20" />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n    <set-header name="X-Powered-By" exists-action="delete" />\r\n    <set-header name="X-AspNet-Version" exists-action="delete" />\r\n  </outbound>\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>'
+    value: '<policies><inbound>\r\n    <base />\r\n    <rate-limit calls="1" renewal-period="30" />\r\n  </inbound>\r\n  <!-- Control if and how the requests are forwarded to services  -->\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <!-- Customize the responses -->\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <!-- Handle exceptions and customize error responses  -->\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>'
     format: 'xml'
   }
 
