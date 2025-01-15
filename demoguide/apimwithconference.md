@@ -85,13 +85,14 @@ This scenario deploys the sample **Conference Demo API** as a running **Azure AP
 6. Navigate to the **Test** tab
 7. Select the **GetSessions** API 
 
-<img src="./APIM/Get_sessions.png" alt="GetSessions API Operation" style="width:70%;">
+
+<img src="./APIM/Get_Sessions.png" alt="GetSessions API Operation" style="width:70%;">
 <br></br>
 
 8. Press the **Send** button
 9. Scroll down in the body section to HTTP Response, and show the **JSON** output from the Get Operation
 
-<img src="./APIM/Get_sessions_HTTPResponse.png" alt="GetSessions API Operation HTTP Response" style="width:70%;">
+<img src="./APIM/Get_Sessions_HTTPResponse.png" alt="GetSessions API Operation HTTP Response" style="width:70%;">
 <br></br>
 
 ### API Management Inbound and Outbound Processing Policies
@@ -101,7 +102,7 @@ This scenario deploys the sample **Conference Demo API** as a running **Azure AP
 
 and hightlight this could be a security risk (you are telling what platform the API is running in the backend, which could be targeted for vulnerabilities now)
 
-<img src="./APIM/Get_sessions_Headers.png" alt="GetSessions API Operation Header" style="width:70%;">
+<img src="./APIM/Get_Sessions_Headers.png" alt="GetSessions API Operation Header" style="width:70%;">
 <br></br>
 
 2. The **solution** for the security risk, is using **APIM Outbound Processing Policies**, which is configured for the **GetSpeakers** API. 
@@ -134,7 +135,7 @@ and hightlight this could be a security risk (you are telling what platform the 
 <img src="./APIM/Get_Speakers_Response.png" alt="GetSpeakers JSON Response" style="width:70%;">
 <br></br>
 
-10. **Repeat** this process by clicking the **Send** button more than 5 times within 20 seconds. this will result in a **Rate Limit Exceeded** Response
+10. **Repeat** this process by clicking the **Send** button more than 1 times within 30 seconds. this will result in a **Rate Limit Exceeded** Response
 
 <img src="./APIM/Get_Speakers_TooManyRequests.png" alt="GetSpeakers Rate Limit Exceeded" style="width:70%;">
 <br></br>
@@ -162,36 +163,6 @@ and hightlight this could be a security risk (you are telling what platform the 
 
 <img src="./APIM/Products_Subscriptions.png" alt="API Management Products Subscriptions details" style="width:70%;">
 <br></br>
-
-### API Management Developer Portal
-API Management provides a Developer Portal as part of the SKUs, which allows you to expose more information about the different APIs, as well as API Operations, consumers of your published APIs can use (Similar to Swagger if you are familiar with it).
-
-1. From the **API Management Resource** Blade, navigate to **Developer Portal**
-
-<img src="./APIM/Developer_Portal.png" alt="API Management Developer Portal" style="width:70%;">
-<br></br>
-
-2. This opens a **fully-customizable HTML Portal**, which can be extended with **Widgets, API Documentation, Access Permissions** and much more.
-
-<img src="./APIM/Developer_Portal_HomePage.png" alt="API Management Developer Portal" style="width:70%;">
-<br></br>
-
-3. **Navigate** through the **Navigation** object, quickly describing what the different customization options are about (e.g. Layout, Styles,...)
-
-<img src="./APIM/Developer_Portal_Navigation.png" alt="API Management Developer Portal Navigation" style="width:70%;">
-<br></br>
-
-4. **Navigate** to the **Upper Left Menu** of the Developer Portal, and select **API**, using **Ctrl- or the Apple Key** to open the **Hyperlink** (or navigate to **https://<Developer Portal URL>/apis**)
-
-<img src="./APIM/Developer_Portal_API.png" alt="API Management Developer Portal Published API" style="width:70%;">
-<br></br>
-
-5. Select the **MTT Conference Demo API** Hyperlink, and open it by using the **Ctrl- or the Apple Key** (or navigate to **https://<Developer Portal URL>/api-details#api=demo-conference-api**)
-
-<img src="./APIM/Developer_Portal_API_details.png" alt="API Management Developer Portal Published API" style="width:70%;">
-<br></br>
-
-This will allow developers/customers to find out which API Operations are available, what Request Parameters to use and what Response information to expect.
 
 ## Properly Deleting your API Management Gateway 
 
