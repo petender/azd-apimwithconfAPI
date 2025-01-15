@@ -365,7 +365,7 @@ resource apimServiceName_demo_conference_api_GetSpeakers_policy 'Microsoft.ApiMa
   parent: apimServiceName_demo_conference_api_GetSpeakers
   name: 'policy'
   properties: {
-    value: '<policies><inbound>\r\n    <base />\r\n    <rate-limit calls="1" renewal-period="30" />\r\n  </inbound>\r\n  <!-- Control if and how the requests are forwarded to services  -->\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <!-- Customize the responses -->\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n  <!-- Handle exceptions and customize error responses  -->\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>'
+    value: '<policies><inbound>\r\n    <base />\r\n    <rate-limit calls="1" renewal-period="30" />\r\n  </inbound>\r\n  <!-- Control if and how the requests are forwarded to services  -->\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <!-- Customize the responses -->\r\n  <outbound>\r\n    <base />\r\n    <set-header name="X-Powered-By" exists-action="delete" />\r\n    <set-header name="X-AspNet-Version" exists-action="delete" />\r\n  </outbound>\r\n  <!-- Handle exceptions and customize error responses  -->\r\n  <on-error>\r\n    <base />\r\n  </on-error>\r\n</policies>'
     format: 'xml'
   }
 
