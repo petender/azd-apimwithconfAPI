@@ -40,7 +40,7 @@ module serverfarm 'br/public:avm/res/web/serverfarm:0.4.0' = {
     location: location
     tags: tags
     kind: 'windows'
-    skuName: 'B3'
+    skuName: 'B1'
     skuCapacity: 1
     diagnosticSettings: [
       {
