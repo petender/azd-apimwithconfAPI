@@ -370,14 +370,7 @@ resource apimServiceName_demo_conference_api_default 'Microsoft.ApiManagement/se
 
 }
 
-resource Microsoft_ApiManagement_service_apis_wikis_apimServiceName_demo_conference_api_default 'Microsoft.ApiManagement/service/apis/wikis@2023-03-01-preview'  = if (apimSku != 'Consumption') {
-  parent: apimServiceName_demo_conference_api
-  name: 'default'
-  properties: {
-    documents: []
-  }
-
-}
+// wiki - preview feature that has been retired (removed)
 
 // in the consumption plans, the rate limiting policy must be applied at the api level
 // in the standard and developer plans, the rate limiting policy can be applied at the operation level
